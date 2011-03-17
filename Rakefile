@@ -14,7 +14,7 @@ require 'rake/testtask'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "mail_engine"
+  gem.name = "new_data_notifier"
   gem.homepage = "http://github.com/hlxwell/new_data_notifier"
   gem.license = "MIT"
   gem.summary = %Q{If there is some new users signed up on your site or some new articles been added by some other user, If you hope been notified, please execute "gem install new_data_notifier}
