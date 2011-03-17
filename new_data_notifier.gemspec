@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{new_data_notifier}
-  s.version = "0.1.3"
+  s.version = "0.1.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["michael he"]
@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
     "VERSION",
     "app/.DS_Store",
     "app/mailers/new_data_notifier/notifier.rb",
-    "app/views/new_data_notifier/notifier/notification.text.erb",
+    "app/views/new_data_notifier/notifier/notify.text.erb",
     "lib/.DS_Store",
     "lib/new_data_notifier.rb",
     "lib/new_data_notifier/engine.rb",
