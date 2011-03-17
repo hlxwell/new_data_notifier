@@ -18,7 +18,14 @@ Install
 
 3. Add cron task.
 
-    */20 * * * * sh -c "cd /home/michael.he/app/current && rake send_latest_data RAILS_ENV=production"
+    */20 * * * * sh -c "cd /home/michael.he/app/current && rake new_data_notifier:send_latest_data RAILS_ENV=production"
+
+TO-DO-LIST
+==========
+
+1. Monitored Models should be able to configured like below:
+
+  NewDataNotifier.be_monitored_models = ["Job.waiting_to_approve", "PaymentTransaction.waiting_to_process"]
 
 
 Copyright
