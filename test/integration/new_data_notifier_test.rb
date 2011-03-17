@@ -6,7 +6,8 @@ class NewDataNotifierTest < ActiveSupport::IntegrationCase
     assert NewDataNotifier::Notifier.get_latest_added_data.blank?
     assert NewDataNotifier::Notifier.send_all_notification.blank?
     User.create :email => "a@a.com"
-    assert !NewDataNotifier::Notifier.get_latest_added_data.blank?
+    Job.create :name => "rails job"    
+    assert_equal 2, NewDataNotifier::Notifier.get_latest_added_data.size
     assert !NewDataNotifier::Notifier.send_all_notification.blank?
   end
 end
