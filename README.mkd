@@ -11,7 +11,9 @@ Install
 2. Change the config in new_data_notifier.rb which placed in initializers dir, below is a sample:
 
     NewDataNotifier.default_recipients = ["hlxwell@gmail.com"]
+
     NewDataNotifier.be_monitored_models = ["Job", "Partner"]
+
     NewDataNotifier.sender_address = ["new_data@gmail.com"]
 
 3. Add cron task.
