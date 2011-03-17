@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{mail_engine}
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["michael he"]
@@ -31,6 +31,7 @@ Gem::Specification.new do |s|
     "lib/new_data_notifier/generators/create_config.rb",
     "lib/new_data_notifier/generators/templates/new_data_notifier.rb",
     "lib/new_data_notifier/tasks/notifier.rake",
+    "mail_engine.gemspec",
     "new_data_notifier.gemspec",
     "test/dummy/Rakefile",
     "test/dummy/app/controllers/application_controller.rb",
