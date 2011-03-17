@@ -1,8 +1,0 @@
-<% @data_hash.each do |key, value| %>
-
-============ New <%= key %>(s) (<%= value.size %>) ================
-  <% value.each do |obj| %>
-    <%=  object_name(obj) %> --- created at: <%= obj.created_at.to_s(:db) %>
-  <% end %>
-
-<% end %>
