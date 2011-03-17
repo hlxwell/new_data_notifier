@@ -38,8 +38,9 @@ module NewDataNotifier
 
       # used to deliver all notification mails
       def send_all_notification
+        data_hash = get_latest_added_data
         # send mail
-        unless get_latest_added_data.select { |key, value| value.count > 0 }.blank?
+        unless data_hash.select { |key, value| value.count > 0 }.blank?
           NewDataNotifier::Notifier.notify(data_hash).deliver
         end
       end
