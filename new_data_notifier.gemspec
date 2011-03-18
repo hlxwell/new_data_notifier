@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{new_data_notifier}
-  s.version = "0.1.4"
+  s.version = "0.1.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["michael he"]
-  s.date = %q{2011-03-17}
+  s.date = %q{2011-03-18}
   s.description = %q{If there is some new users signed up on your site or some new articles been added by some other user, If you hope been notified, please execute "gem install new_data_notifier}
   s.email = %q{hlxwell@gmail.com}
   s.extra_rdoc_files = [
@@ -35,6 +35,7 @@ Gem::Specification.new do |s|
     "test/dummy/Rakefile",
     "test/dummy/app/controllers/application_controller.rb",
     "test/dummy/app/helpers/application_helper.rb",
+    "test/dummy/app/models/job.rb",
     "test/dummy/app/models/user.rb",
     "test/dummy/app/views/layouts/application.html.erb",
     "test/dummy/config.ru",
@@ -54,6 +55,7 @@ Gem::Specification.new do |s|
     "test/dummy/config/locales/en.yml",
     "test/dummy/config/routes.rb",
     "test/dummy/db/migrate/20110317034437_create_users.rb",
+    "test/dummy/db/migrate/20110317065149_create_jobs.rb",
     "test/dummy/db/schema.rb",
     "test/dummy/public/404.html",
     "test/dummy/public/422.html",
@@ -79,6 +81,7 @@ Gem::Specification.new do |s|
   s.test_files = [
     "test/dummy/app/controllers/application_controller.rb",
     "test/dummy/app/helpers/application_helper.rb",
+    "test/dummy/app/models/job.rb",
     "test/dummy/app/models/user.rb",
     "test/dummy/config/application.rb",
     "test/dummy/config/boot.rb",
@@ -94,6 +97,7 @@ Gem::Specification.new do |s|
     "test/dummy/config/initializers/session_store.rb",
     "test/dummy/config/routes.rb",
     "test/dummy/db/migrate/20110317034437_create_users.rb",
+    "test/dummy/db/migrate/20110317065149_create_jobs.rb",
     "test/dummy/db/schema.rb",
     "test/integration/new_data_notifier_test.rb",
     "test/support/integration_case.rb",
