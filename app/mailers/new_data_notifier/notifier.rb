@@ -48,8 +48,9 @@ module NewDataNotifier
       def get_latest_added_data
         # find data
         data_hash = {}
+        last_sent_at = get_last_sent_at
         NewDataNotifier::Notifier.be_monitored_models.each do |model|
-          data_hash[model.downcase.to_sym] = model.constantize.where("created_at >= ?", get_last_sent_at).order("created_at DESC")
+          data_hash[model.downcase.to_sym] = model.constantize.where("created_at >= ?", last_sent_at).order("created_at DESC")
         end
         data_hash.delete_if { |key, value| value.count == 0 }
         data_hash
