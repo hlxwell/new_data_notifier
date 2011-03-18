@@ -86,13 +86,12 @@ module NewDataNotifier
 
     helper_method :object_name
     def object_name(obj)
-      if obj.respond_to?(:title) and obj.try(:title).present?
-        obj.title
-      elsif obj.respond_to?(:name) and obj.try(:name).present?
-        obj.name
-      else
-        "#{obj.class}##{obj.id}"
+      %w{name title subject email}.each do |col|
+        if obj.respond_to?(col.to_sym) and obj.try(col.to_sym).present?
+          return "#{obj.class}##{obj.send(col)}"
+        end
       end
+      "#{obj.class}##{obj.id}"
     end
   end
 
