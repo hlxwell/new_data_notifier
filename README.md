@@ -6,7 +6,7 @@ If there is some new users signed up on your site or some new articles been adde
 Install
 =======
 
-1. Execute "rails generate new_data_notifier:config"
+1. Execute "rails generate new_data_notifier:create_config"
 
 2. Change the config in new_data_notifier.rb which placed in initializers dir, below is a sample:
 

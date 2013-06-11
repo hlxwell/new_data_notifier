@@ -50,7 +50,11 @@ module NewDataNotifier
         data_hash = {}
         last_sent_at = get_last_sent_at
         NewDataNotifier::Notifier.be_monitored_models.each do |model|
-          data_hash[model.downcase.to_sym] = model.constantize.where("created_at >= ?", last_sent_at).order("created_at DESC")
+          data_hash[model.downcase.to_sym] = if model.constantize.respond_to? :embeds_many
+                                               model.constantize.where(:created_at.gte => last_sent_at).desc(:created_at)
+                                             else
+                                               model.constantize.where("created_at >= ?", last_sent_at).order("created_at DESC")
+                                             end
         end
         data_hash.delete_if { |key, value| value.count == 0 }
         data_hash
