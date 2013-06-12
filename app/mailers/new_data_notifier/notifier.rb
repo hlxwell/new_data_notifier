@@ -50,6 +50,7 @@ module NewDataNotifier
         data_hash = {}
         last_sent_at = get_last_sent_at
         NewDataNotifier::Notifier.be_monitored_models.each do |model|
+          # judge mongoid or active_record
           data_hash[model.downcase.to_sym] = if model.constantize.respond_to? :embeds_many
                                                model.constantize.where(:created_at.gte => last_sent_at).desc(:created_at)
                                              else
@@ -61,11 +62,12 @@ module NewDataNotifier
       end
 
       def get_last_sent_at
-        time_mark_file_path = File.join(Rails.root, 'tmp', 'last_notification_send_at')
+        # since the heroku doesn't support tmp file storage.
+        time_mark_file_path = File.join(Rails.root, 'public', 'last_notification_send_at')
         # read last sent time, if blank, set current time.
         begin
           last_sent_at = Time.parse( File.read(time_mark_file_path) )
-          raise "tmp/last_notification_send_at not found" if last_sent_at.blank?
+          raise "public/last_notification_send_at not found" if last_sent_at.blank?
         rescue
           last_sent_at = Time.now
         ensure
